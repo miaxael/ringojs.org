@@ -71,7 +71,7 @@ In our case `{{page.name}}` and `{{page.body}}` are certainly `undefined` becaus
 
 Note that we do not save the newly created page. We return the unsaved Page object.
 
-Try opening the edit form for a non-existing page again. The `INVALID` messages should be gone: <http://localhost:8080/foobar/edit>.
+Try opening the edit form for a non-existing page again. The `INVALID` messages should be gone: <http://localhost:8080/foobar/edit>. FIXME: this doesn't work because we acces body and name with getters wich throw an exception due to not existing Page.revisions
 
 It would be convinient if the "slug" we already specified in the URL would show up as the default "name" of the page. This can be done in the template with a default Reinhardt filter. Change the "name" part of the form to use the `{% firstof %}` tag, which outputs the first non-falsy variable:
 
